@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<title>AmdY &#8212; Извращение программиста</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//amdy.su' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="AmdY &raquo; Лента" href="http://amdy.su/feed/" />
+<link rel="alternate" type="application/rss+xml" title="AmdY &raquo; Лента комментариев" href="http://amdy.su/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.2.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=UA-6704399-1"  type="text/javascript" data-cfasync="false" async></script>
+			<script type="text/javascript" data-cfasync="false">
+				var mi_version = '8.2.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-6704399-1',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-6704399-1', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;										(
+						function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						}
+					)();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/amdy.su\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='http://amdy.su/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='mkaz-code-syntax-prism-css-css'  href='http://amdy.su/wp-content/plugins/code-syntax-block/assets/prism-a11y-dark.css?ver=1636051765' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://amdy.su/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='vt-blogging-style-css'  href='http://amdy.su/wp-content/themes/vt-blogging/style.css?ver=1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-style-css'  href='http://amdy.su/wp-content/themes/vt-blogging/assets/fonts/genericons/genericons.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='vt-blogging-fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C600%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-style-css'  href='http://amdy.su/wp-content/themes/vt-blogging/responsive.css?ver=1.1' type='text/css' media='all' />
+<script type='text/javascript' id='monsterinsights-frontend-script-js-extra'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"http:\/\/amdy.su","hash_tracking":"false","ua":"UA-6704399-1","v4_id":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.2.0' id='monsterinsights-frontend-script-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="http://amdy.su/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://amdy.su/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://amdy.su/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.3" />
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="home blog group-blog hfeed">
+<div id="page" class="site">
+
+	<header id="masthead" class="site-header clear">
+
+		<div class="container">
+
+			<div class="site-branding">
+			
+									<h1 class="site-title"><a href="http://amdy.su/" title="AmdY" rel="home">AmdY</a></h1>
+					<h2 class="site-description">Извращение программиста</h2>
+				
+			</div><!-- .site-branding -->
+
+			<nav id="primary-nav" class="main-navigation">
+
+				<div class="menu-primary-navigation-container"><ul id="primary-menu" class="sf-menu"><li id="menu-item-520" class="menu-item menu-item-type- menu-item-object- menu-item-520"><a></a></li>
+<li id="menu-item-644" class="menu-item menu-item-type- menu-item-object- menu-item-644"><a></a></li>
+<li id="menu-item-646" class="menu-item menu-item-type- menu-item-object- menu-item-646"><a></a></li>
+<li id="menu-item-645" class="menu-item menu-item-type- menu-item-object- menu-item-645"><a></a></li>
+<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="http://amdy.su/contacts/">Контакты</a></li>
+</ul></div>
+			</nav><!-- #primary-nav -->
+
+							<span class="search-icon">
+					<span class="genericon genericon-search"></span>
+					<span class="genericon genericon-close"></span>			
+				</span>
+				
+
+			<div id="slick-mobile-menu"></div>
+		
+		</div><!-- .container -->
+
+	</header><!-- #masthead -->
+
+			<div class="header-search">
+			<div class="container">
+				
+<form id="searchform" role="search" method="get" action="http://amdy.su/">
+	<span class="screen-reader-text">Поиск:</span>
+	<input type="search" class="search-input" placeholder="Поиск..." value="" name="s" title="Поиск:" />
+	<button type="submit" role="button" class="search-submit">Поиск</button>
+</form>			</div>
+		</div><!-- .header-search -->
+	
+	<div id="content" class="site-content container clear">	
+
+	<div id="primary" class="content-area layout-1c clear">
+
+		<main id="main" class="site-main clear">
+
+			<div id="recent-content" class="content-loop">
+
+				
+	<div id="post-737" class="clear post-737 post type-post status-publish format-standard has-post-thumbnail hentry category-php category-programming tag-cache tag-performance">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2021/08/23/cache/">Поговорим о проблемах кэширования</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">23 августа, 2021</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/php/" title="Посмотреть все записи в PHP" >PHP</a> </span> 
+			</div><!-- .entry-meta -->
+				
+						<div class="entry-thumbnail">
+				<img width="274" height="184" src="http://amdy.su/wp-content/uploads/2021/08/images.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://amdy.su/wp-content/uploads/2021/08/images.png 274w, http://amdy.su/wp-content/uploads/2021/08/images-80x54.png 80w" sizes="(max-width: 274px) 100vw, 274px" />			</div>
+				
+			<div class="entry-summary">
+				<p>Существует две главные проблемы программирования: именование переменных и инвалидация кэша. Поговорим о второй. Но для начала разберёмся с самим термином &#8212; кэширование. Я нашёл много определений, но мне они не очень нравятся. Приведу моё: Кэширование &#8212; от английского cacher (прятать, завёртывать), сохранение данных данных в другом месте или виде. Пункт, который меня смутил в других определениях &#8212; повсеместное упоминания ускорения. Но это не всегда так. Мы можем складывать данные и в более медленное хранилище, чтобы разгрузить основное. Тем самым уменьшив нагрузку на основной сторадж. Можем преобразовать данные в вид более удобный для парсинга как то xml или json. Можем разбрасывать&#8230; </p>
+				<span class="read-more"><a href="http://amdy.su/2021/08/23/cache/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-737 -->
+
+
+	<div id="post-733" class="clear post-733 post type-post status-publish format-standard hentry category-uncategorized tag-linux">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2018/07/13/%d0%ba%d0%b0%d0%ba-%d0%b8%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d1%82%d1%8c-%d0%bf%d1%80%d0%be%d0%b1%d0%bb%d0%b5%d0%bc%d1%83-%d1%81-%d1%83%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%be%d0%b9-viber/">Как исправить проблему с установкой viber в kubuntu 18.04</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">13 июля, 2018</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/uncategorized/" title="Посмотреть все записи в Без рубрики" >Без рубрики</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>В новой версии kubuntu 18.04 используется libcurl4, а в зависимостях viber 3-я версия. Соответственно при установке viber просит установить старую версию и сносит новую libcurl4 и софт зависящий от неё. Лучший известный мне способ исправить данную проблему &#8212; пересобрать пакет. И всё работает. Печалит то, что современные приоритеты месенджеров кроются в продажах стикеров и информации, а вот потратить пару человекочасов на нормальный способ дистрибуции &#8212; жалко.</p>
+				<span class="read-more"><a href="http://amdy.su/2018/07/13/%d0%ba%d0%b0%d0%ba-%d0%b8%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d1%82%d1%8c-%d0%bf%d1%80%d0%be%d0%b1%d0%bb%d0%b5%d0%bc%d1%83-%d1%81-%d1%83%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%be%d0%b9-viber/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-733 -->
+
+
+	<div id="post-730" class="clear post-730 post type-post status-publish format-standard hentry category-uncategorized">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2018/07/06/%d1%80%d0%b5%d1%84%d0%b0%d0%ba%d1%82%d0%be%d1%80%d0%b8%d0%bd%d0%b3-%d0%b1%d0%bb%d0%be%d0%b3%d0%b0/">Рефакторинг блога.</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">6 июля, 2018</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/uncategorized/" title="Посмотреть все записи в Без рубрики" >Без рубрики</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>Бложек немного приболел, дроплет на DO полетел, унеся с собой блог. Занимаюсь сейчас ремонтом и восстановлением из бэкапа. А заодно надо почистить лютый треш из стрых записей. А то многие статьи самому страшно перечитывать и хочется поломать руки тому говнокодеру&#8230;</p>
+				<span class="read-more"><a href="http://amdy.su/2018/07/06/%d1%80%d0%b5%d1%84%d0%b0%d0%ba%d1%82%d0%be%d1%80%d0%b8%d0%bd%d0%b3-%d0%b1%d0%bb%d0%be%d0%b3%d0%b0/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-730 -->
+
+
+	<div id="post-687" class="clear post-687 post type-post status-publish format-standard hentry category-php category-programming tag-framework tag-laravel tag-oop">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2016/03/25/%d0%bd%d0%b5%d0%b4%d0%be%d1%81%d1%82%d0%b0%d1%82%d0%ba%d0%b8-laravel/">Недостатки laravel</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">25 марта, 2016</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/php/" title="Посмотреть все записи в PHP" >PHP</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>Я очень люблю фреймворк laravel, пользуюсь им начиная с 3-й версии, тогда он был как глоток свежего воздуха на фоне zend и symfony. Уважаю Тейлора за проделанную работу, за принесённую в php фреймворки идею удобного апи и умение копировать лучшее из других фреймворков вроде RoR. О плюсах сказано уже много, но у него есть свои недостатки. Эти недостатки не фатальны, а некоторые и вовсе мои личные привычки, которые другим покажутся надуманными. Всё дерьмо вылитое ниже не сильно влияет на мою оценку laravel, который считаю лучшим фреймворком в мире PHP. И спасибо @kotchuprik и его статье, который подтолкнул высказаться и дал некоторые идеи.</p>
+				<span class="read-more"><a href="http://amdy.su/2016/03/25/%d0%bd%d0%b5%d0%b4%d0%be%d1%81%d1%82%d0%b0%d1%82%d0%ba%d0%b8-laravel/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-687 -->
+
+
+	<div id="post-670" class="clear post-670 post type-post status-publish format-standard hentry category-php">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2015/03/07/%d0%bf%d1%80%d0%be%d0%b1%d0%bb%d0%b5%d0%bc%d1%8b-%d1%81-%d0%be%d0%b1%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5%d0%bc-ubuntu/">Проблемы с обновлением ubuntu</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">7 марта, 2015</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/php/" title="Посмотреть все записи в PHP" >PHP</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>Недавно на kubuntu 14.10 столкнулся с проблемой при обновлении Ош http://by.archive.ubuntu.com utopic-backports/main Sources 404 Not Found Ош http://by.archive.ubuntu.com utopic-backports/restricted Sources 404 Not Found Ош http://by.archive.ubuntu.com utopic-backports/universe Sources 404 Not Found Ош http://by.archive.ubuntu.com utopic-backports/multiverse Sources 404 Not Found Ош http://by.archive.ubuntu.com utopic-backports/main i386 Packages 404 Not Found Ош http://by.archive.ubuntu.com utopic-backports/universe i386 Packages 404 Not Found Ош http://by.archive.ubuntu.com utopic-backports/multiverse i386 Packages 404 Not Found В кэше http://by.archive.ubuntu.com utopic-backports/main Translation-en В кэше http://by.archive.ubuntu.com utopic/restricted Translation-ru Долго не мог найти решение, но всё же нарыл в очередной заход sudo -i apt-get clean cd /var/lib/apt mv lists lists.old mkdir -p lists/partial apt-get clean apt-get update Спасибо&#8230; </p>
+				<span class="read-more"><a href="http://amdy.su/2015/03/07/%d0%bf%d1%80%d0%be%d0%b1%d0%bb%d0%b5%d0%bc%d1%8b-%d1%81-%d0%be%d0%b1%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5%d0%bc-ubuntu/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-670 -->
+
+
+	<div id="post-661" class="clear post-661 post type-post status-publish format-standard hentry category-php category-programming tag-ci tag-deployment tag-jenkins tag-phpci tag-phpmetrics tag-phpunit tag-robo tag-rocketeer tag-169">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2015/03/04/continuous-integration-delivery-deployment/">Continuous Integration, delivery, deployment</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">4 марта, 2015</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/php/" title="Посмотреть все записи в PHP" >PHP</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>Данный пост противопоказан и может оскорблять чувства верующих в церковь Мартина Фаулера, так как является довольно вольной трактовкой, но обтесанной годами моей практики. Сидит программист, пишет свой код, думает о пиве и здесь появляется другой программист, с ним тестировщик и, прости Господи, проектный менеджер. Здесь уже не до пива, код больше нельзя править на сервере через удалённый доступ. Приходится разворачивать git, лепить ветки, создавать билды и гонять тесты и в дело вступает супергерой Continuous. Последнее время принято мешать три шага Continuous в одну кучу, хотя эти шаги сильно отличаются по целям и подходам. Эти шаги &#8212; Continuous Integration, Continuous Delivery и Continuous Deployment.</p>
+				<span class="read-more"><a href="http://amdy.su/2015/03/04/continuous-integration-delivery-deployment/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-661 -->
+
+
+	<div id="post-648" class="clear post-648 post type-post status-publish format-standard hentry category-javascript tag-angularjs tag-javascript">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2015/02/17/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d0%b8-%d0%b2-angularjs/">Модули в angularjs</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">17 февраля, 2015</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/javascript/" title="Посмотреть все записи в JavaScript" >JavaScript</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>Поговорим о повторно используемом коде. Чтобы код повторно использовать его нужно оформлять особым способом и выносить в пакеты. Сейчас все нормальные фреймворки в разных языках программирования имеют поддержку пакетов и пакетные менеджеры для управления ими, а так же для решения проблем с версиями и зависимостями. В javascript для управления пакетами применяется bower. Теперь же рассмотрим как писать код, чтобы его можно было внедрять в проекты, в качестве препарируемого будет angularjs. Angularjs поддерживает модули, будем использовать именно их. Для примера можно разворатить пару готовых, я же постараюсь описать найденное мною. Модуль является контейнер в который мы можем складывать константы, переменные, контроллеры, сервисы и&#8230; </p>
+				<span class="read-more"><a href="http://amdy.su/2015/02/17/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d0%b8-%d0%b2-angularjs/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-648 -->
+
+
+	<div id="post-623" class="clear post-623 post type-post status-publish format-standard hentry category-php">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2014/12/31/itogi-2014/">Итоги 2014</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">31 декабря, 2014</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/php/" title="Посмотреть все записи в PHP" >PHP</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>В 2014 году в блоге не появилось ни одной новой записи, но помню про него, копится материал, появилась парочка черновиков и в 2015 обязательно разрожусь целым циклом постов. Год получился отличным, есть о чём рассказать. Помимо написания кода, активно начал заниматься обучением: появилась стажёрская программа, организуем воркшопы внутри компании, готовим небольшой хакатон, провел тьму собеседований. Приятно наблюдать как это всё приносит результаты, да ещё быстрее чем планировалось. Огромное спасибо за это HR и просто отличному человеку Ольге Бобко, которая дала возможность и подталкивает в этом направлении. А вот за код мне стыдно, он становится всё более пахнущим, работа в команде и бизнес требования&#8230; </p>
+				<span class="read-more"><a href="http://amdy.su/2014/12/31/itogi-2014/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-623 -->
+
+
+	<div id="post-564" class="clear post-564 post type-post status-publish format-standard hentry category-php category-programming tag-ant tag-ci tag-jenkins tag-phing tag-php">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2013/10/20/continuous-integration-with-jenkins/">Continuous integration с Jenkins</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">20 октября, 2013</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/php/" title="Посмотреть все записи в PHP" >PHP</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>Continuous integration или непрерывная интеграция &#8212; это практика создания  автоматизированной сборки проекта. Хотя это и звучит как-то заковыристо, но это то, что программист делает ежедневно. Мы пишем код и проверяем его на синтаксические ошибки, на соответствие стилю кодирования, прогоняем тесты, боремся с copy-past и тд. и т.п. В PHP существует масса инструментов. позволяющих это автоматизировать, в PEAR есть пакет phpqatools, который ставит сразу пачку таких утилит. Но прогонять их руками неудобно, к тому же хочется иметь какой-то графический интерфейс, чтобы просматривать отчёты, чтобы наблюдать как изменяется проект, иметь возможность смотреть на старые версии и т.д. Здесь на помощь приходит Jenkins.</p>
+				<span class="read-more"><a href="http://amdy.su/2013/10/20/continuous-integration-with-jenkins/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-564 -->
+
+
+	<div id="post-558" class="clear last post-558 post type-post status-publish format-standard hentry category-php tag-laravel tag-mysql tag-orm">	
+
+		<div class="entry-overview">
+			
+			<h2 class="entry-title"><a href="http://amdy.su/2013/09/19/order-by-field-v-laravel/">ORDER BY FIELD в Laravel</a></h2>
+		
+			<div class="entry-meta clear">
+				<span class="entry-author"><a href="http://amdy.su/author/amdy/"><img alt='' src='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=22&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1ce6f4ecad0eb49565d1443d7907a9a8?s=44&#038;d=mm&#038;r=g 2x' class='avatar avatar-22 photo' height='22' width='22' loading='lazy'/></a> Создано автором <a href="http://amdy.su/author/amdy/" title="Записи amdy" rel="author">amdy</a></span> 
+				&#8212; <span class="entry-date">19 сентября, 2013</span>
+				<span class="entry-category"> в <a href="http://amdy.su/category/php/" title="Посмотреть все записи в PHP" >PHP</a> </span> 
+			</div><!-- .entry-meta -->
+				
+				
+			<div class="entry-summary">
+				<p>Есть замечательная SQL конструкция, позволяющая задавать свой порядок сортировки для ORDER BY. Сегодня мне понадобилось использовать ORDER BY FIELD(priority, 2,1,3), ситуация осложнялась тем, что используется ORM от Laravel и его Query Builder экранирует то. что передано через -&gt;orderBy. Решение же оказалось очень простым, нужно использовать raw \Model::orderBy( \DB::raw(&#8216;FIELD(status, 2, 1, 3)&#8217;) );</p>
+				<span class="read-more"><a href="http://amdy.su/2013/09/19/order-by-field-v-laravel/">Читать далее &raquo;</a></span>
+			</div><!-- .entry-summary -->
+
+		</div><!-- .entry-overview -->
+
+	</div><!-- #post-558 -->
+
+
+			</div><!-- #recent-content -->		
+
+		</main><!-- .site-main -->
+
+		
+	<nav class="navigation pagination" aria-label="Записи">
+		<h2 class="screen-reader-text">Навигация по записям</h2>
+		<div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="http://amdy.su/page/2/">2</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class="page-numbers" href="http://amdy.su/page/9/">9</a>
+<a class="next page-numbers" href="http://amdy.su/page/2/">Далее</a></div>
+	</nav>		
+	</div><!-- #primary -->
+
+
+	</div><!-- #content .site-content -->
+	
+	<footer id="colophon" class="site-footer">
+
+				
+		<div id="site-bottom" class="container clear">
+
+			<div class="site-info">Авторские права &copy; 2022 <a href="http://amdy.su/" title="AmdY"><span>AmdY</span></a>. Все права защищены.<br>Тема: VT Blogging от <a href="https://volthemes.com/theme/vt-blogging-pro/" target="_blank" title="VolThemes"><span>VolThemes</span></a>. Работает на <a href="https://wordpress.org" target="_blank" title="WordPress"><span>WordPress</span></a>.</div>			
+
+		</div><!-- #site-bottom -->
+							
+	</footer><!-- #colophon -->
+	
+</div><!-- #page -->
+
+	<div id="back-top">
+		<a href="#top" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+	</div>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b' id='syntaxhighlighter-core-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0.9b' id='syntaxhighlighter-brush-as3-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushArduino.js?ver=3.0.9b' id='syntaxhighlighter-brush-arduino-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.9b' id='syntaxhighlighter-brush-bash-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0.9b' id='syntaxhighlighter-brush-coldfusion-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushClojure.js?ver=20090602' id='syntaxhighlighter-brush-clojure-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0.9b' id='syntaxhighlighter-brush-cpp-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b' id='syntaxhighlighter-brush-csharp-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0.9b' id='syntaxhighlighter-brush-css-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0.9b' id='syntaxhighlighter-brush-delphi-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0.9b' id='syntaxhighlighter-brush-diff-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0.9b' id='syntaxhighlighter-brush-erlang-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushFSharp.js?ver=20091003' id='syntaxhighlighter-brush-fsharp-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0.9b' id='syntaxhighlighter-brush-groovy-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0.9b' id='syntaxhighlighter-brush-java-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0.9b' id='syntaxhighlighter-brush-javafx-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b' id='syntaxhighlighter-brush-jscript-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushLatex.js?ver=20090613' id='syntaxhighlighter-brush-latex-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushMatlabKey.js?ver=20091209' id='syntaxhighlighter-brush-matlabkey-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushObjC.js?ver=20091207' id='syntaxhighlighter-brush-objc-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0.9b' id='syntaxhighlighter-brush-perl-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0.9b' id='syntaxhighlighter-brush-php-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b' id='syntaxhighlighter-brush-plain-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0.9b' id='syntaxhighlighter-brush-powershell-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0.9b' id='syntaxhighlighter-brush-python-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushR.js?ver=20100919' id='syntaxhighlighter-brush-r-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0.9b' id='syntaxhighlighter-brush-ruby-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0.9b' id='syntaxhighlighter-brush-scala-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0.9b' id='syntaxhighlighter-brush-sql-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0.9b' id='syntaxhighlighter-brush-vb-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.9b' id='syntaxhighlighter-brush-xml-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushYaml.js?ver=3.0.9b' id='syntaxhighlighter-brush-yaml-js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = "http://amdy.su/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeRDark.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ расширить источник';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Не удается найти кисть для: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Пакет не был настроен для опции html-script: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
+<script type='text/javascript' id='mkaz-code-syntax-prism-js-js-extra'>
+/* <![CDATA[ */
+var prism_settings = {"pluginUrl":"http:\/\/amdy.su\/wp-content\/plugins\/code-syntax-block\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/code-syntax-block/assets/prism/prism.js?ver=1636051765' id='mkaz-code-syntax-prism-js-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"http:\/\/amdy.su\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.2' id='contact-form-7-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/themes/vt-blogging/assets/js/superfish.min.js?ver=5.9.3' id='superfish-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/themes/vt-blogging/assets/js/jquery.slicknav.min.js?ver=5.9.3' id='slicknav-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/themes/vt-blogging/assets/js/modernizr.min.js?ver=5.9.3' id='modernizr-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/themes/vt-blogging/assets/js/html5shiv.min.js?ver=5.9.3' id='html5shiv-js'></script>
+<script type='text/javascript' src='http://amdy.su/wp-content/themes/vt-blogging/assets/js/jquery.custom.js?ver=5.9.3' id='vt-blogging-scripts-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6Lcno_MUAAAAAOggmDaS8g0Ad-n4T1Dccp4jPZnV&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6Lcno_MUAAAAAOggmDaS8g0Ad-n4T1Dccp4jPZnV","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://amdy.su/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.5.2' id='wpcf7-recaptcha-js'></script>
+
+</body>
+</html>
